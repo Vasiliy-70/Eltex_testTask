@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Авторизация-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController title="Авторизация" id="BYZ-38-t0r" customClass="LoginScreen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,6 @@
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="leading" secondItem="wu0-RG-axd" secondAttribute="trailing" constant="-74" id="qgT-ge-TI4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zJh-xj-j3U"/>
                     <connections>
                         <outlet property="passwordTextField" destination="QNZ-GI-4GH" id="gtL-3J-fMV"/>
                         <outlet property="usernameTextField" destination="C5h-wl-rSc" id="NiQ-MY-RwE"/>

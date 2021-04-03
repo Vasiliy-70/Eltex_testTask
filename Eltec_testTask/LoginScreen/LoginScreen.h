@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  LoginScreen.h
 //  Eltec_testTask
 //
 //  Created by Боровик Василий on 27.03.2021.
@@ -9,13 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginViewController : UIViewController
+@interface LoginScreen : UIViewController
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-+(LoginViewController*)storyboardInstance;
++(LoginScreen*)storyboardInstance;
 @end
 
 NS_ASSUME_NONNULL_END

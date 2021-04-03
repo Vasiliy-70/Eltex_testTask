@@ -8,34 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User Info View Controller-->
+        <!--Личный кабинет-->
         <scene sceneID="Ja3-qT-6M1">
             <objects>
-                <viewController id="4Ro-d0-4yX" customClass="UserInfoViewController" customModule="Eltec_testTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Личный кабинет" id="4Ro-d0-4yX" customClass="UserInfoScreen" customModule="Eltec_testTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x98-j4-jw9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roleId" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARW-M3-yvd" userLabel="RoleIdLabel">
-                                <rect key="frame" x="20" y="64" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-55-sU2" userLabel="UserNameLabel">
-                                <rect key="frame" x="20" y="104.5" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="148.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECx-hP-PvV" userLabel="EmailLabel">
-                                <rect key="frame" x="20" y="145" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="189" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9h3-4r-ZlJ">
-                                <rect key="frame" x="0.0" y="195.5" width="414" height="666.5"/>
+                                <rect key="frame" x="0.0" y="239.5" width="414" height="573.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" textLabel="P2X-GH-Dq4" style="IBUITableViewCellStyleDefault" id="LWP-Ef-MLC">
@@ -80,10 +80,19 @@
                             <constraint firstItem="OHV-Gk-ycK" firstAttribute="trailing" secondItem="ECx-hP-PvV" secondAttribute="trailing" constant="20" id="s4k-6u-Vxc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="glk-eE-FxT">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="WPJ-HF-a53">
+                            <connections>
+                                <action selector="LogoutAction:" destination="4Ro-d0-4yX" id="Dwn-f5-4zo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCa-YY-pxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49.275362318840585" y="24.776785714285712"/>
+            <point key="canvasLocation" x="3591.3043478260875" y="24.776785714285712"/>
         </scene>
     </scenes>
     <resources>

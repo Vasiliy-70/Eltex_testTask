@@ -5,16 +5,16 @@
 //  Created by Боровик Василий on 27.03.2021.
 //
 
-#import "LoginViewController.h"
+#import "LoginScreen.h"
 #import <Eltec_testTask-Swift.h>
 
-@implementation LoginViewController
+@implementation LoginScreen
 
-+ (LoginViewController *)storyboardInstance {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginView" bundle:nil];
++ (LoginScreen *)storyboardInstance {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass(self) bundle:nil];
 	UIViewController *viewController = [storyboard instantiateInitialViewController];
 	
-	return (LoginViewController *)viewController;
+	return (LoginScreen *)viewController;
 	
 }
 

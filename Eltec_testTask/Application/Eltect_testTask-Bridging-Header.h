@@ -5,7 +5,7 @@
 //  Created by Боровик Василий on 03.04.2021.
 //
 
-#import "LoginViewController.h"
+#import "LoginScreen.h"
 
 #ifndef Eltect_testTask_Bridging_Header_h
 #define Eltect_testTask_Bridging_Header_h

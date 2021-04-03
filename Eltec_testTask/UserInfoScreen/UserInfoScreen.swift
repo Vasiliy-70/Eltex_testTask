@@ -1,5 +1,5 @@
 //
-//  UserInfoViewController.swift
+//  UserInfoScreen.swift
 //  Eltec_testTask
 //
 //  Created by Боровик Василий on 03.04.2021.
@@ -7,12 +7,17 @@
 
 import UIKit
 
-final class UserInfoViewController: UIViewController {
+final class UserInfoScreen: UIViewController {
 	private var test = ["1", "2", "3", "4"]
 
-	static func storyboardInstance() -> UserInfoViewController? {
+	@IBAction func LogoutAction(_ sender: Any) {
+		let loginScreen = LoginScreen.storyboardInstance()
+		self.navigationController?.setViewControllers([loginScreen], animated: true)
+	}
+	
+	static func storyboardInstance() -> UserInfoScreen? {
 		let storyboard = UIStoryboard(name:String(describing: self), bundle: nil)
-		return storyboard.instantiateInitialViewController() as? UserInfoViewController
+		return storyboard.instantiateInitialViewController() as? UserInfoScreen
 	}
 	
     override func viewDidLoad() {
@@ -24,13 +29,13 @@ final class UserInfoViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 
-extension UserInfoViewController: UITableViewDelegate {
+extension UserInfoScreen: UITableViewDelegate {
 	
 }
 
 // MARK: UITableViewDataSource
 
-extension UserInfoViewController: UITableViewDataSource {
+extension UserInfoScreen: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return test.count
 	}
