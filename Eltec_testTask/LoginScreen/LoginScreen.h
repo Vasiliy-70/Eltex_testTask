@@ -6,16 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import <Eltec_testTask-Swift.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginScreen : UIViewController
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
+@property (strong, nonatomic) NSString *url;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-+(LoginScreen*)storyboardInstance;
++(LoginScreen*)storyboardInstance:(NSString *)url;
 @end
 
 NS_ASSUME_NONNULL_END

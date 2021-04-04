@@ -1,0 +1,6 @@
+module Pods_Eltec_testTask {
+  umbrella header "Pods-Eltec_testTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

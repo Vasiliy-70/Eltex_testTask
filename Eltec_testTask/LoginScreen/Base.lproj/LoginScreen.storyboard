@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-Mv-EY9" userLabel="LoginLabel">
-                                <rect key="frame" x="20" y="69" width="42" height="21"/>
+                                <rect key="frame" x="20" y="69" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,7 +57,9 @@
                             <constraint firstItem="fQI-Mv-EY9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="2Ss-mk-HL0"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="leading" secondItem="C5h-wl-rSc" secondAttribute="leading" id="5Lp-78-1uJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7AW-YU-JhO" secondAttribute="trailing" constant="40" id="An3-Io-Kxf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wu0-RG-axd" secondAttribute="trailing" constant="320" id="PN0-sH-Ubu"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="trailing" secondItem="C5h-wl-rSc" secondAttribute="trailing" id="TVI-2L-fJf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fQI-Mv-EY9" secondAttribute="trailing" constant="20" id="YWC-vR-zQg"/>
                             <constraint firstItem="C5h-wl-rSc" firstAttribute="top" secondItem="fQI-Mv-EY9" secondAttribute="bottom" constant="8" symbolic="YES" id="Yqg-xM-qgU"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="top" secondItem="wu0-RG-axd" secondAttribute="bottom" constant="8" symbolic="YES" id="b1q-bb-uPY"/>
                             <constraint firstItem="7AW-YU-JhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="bJ4-Rb-fu8"/>

@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="2413.04347826087" y="57.589285714285708"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="E5H-sm-kuy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Zq1-HQ-AWw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zq1-HQ-AWw" customClass="CustomNavigationController" customModule="Eltec_testTask" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NLX-6s-3Hc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -45,7 +45,6 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xed-I2-Ksr">
-                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

@@ -30,7 +30,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECx-hP-PvV" userLabel="EmailLabel">
                                 <rect key="frame" x="20" y="189" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -89,6 +89,12 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="ECx-hP-PvV" id="vq7-Qu-Ey6"/>
+                        <outlet property="permissionTable" destination="9h3-4r-ZlJ" id="AwR-Fg-wxv"/>
+                        <outlet property="roleIdLabel" destination="ARW-M3-yvd" id="LbW-7Q-s2U"/>
+                        <outlet property="usernameLabel" destination="W8D-55-sU2" id="7dh-QS-QU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCa-YY-pxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

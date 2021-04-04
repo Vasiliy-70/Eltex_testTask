@@ -6,6 +6,7 @@
 //
 
 import UIKit
+let userDefaultsKey = "lastUser"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,4 +34,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
