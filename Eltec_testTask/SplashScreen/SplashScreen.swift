@@ -20,24 +20,19 @@ final class SplashScreen: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.navigationController?.setNavigationBarHidden(true, animated: true)
-		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-			self.checkUser()
-			self.navigationController?.setNavigationBarHidden(false, animated: true)
-		}
+		self.checkSession()
 	}
 	
-	private func checkUser() {
+//	Проверка, есть ли сохранённая пользовательская сессия
+	private func checkSession() {
 		if let userAccount = UserDefaults.standard.object(forKey: userDefaultsKey) as? String {
-			
 			let userInfo = Locksmith.loadDataForUserAccount(userAccount: userAccount)
 			
 			if (userInfo?.count != nil) {
-				(self.navigationController as? CustomNavigationController)?.showUserInfoScreen(userAccount: userAccount)
+				(self.navigationController as? RootNavigationController)?.showUserInfoScreen(userAccount: userAccount)
 				return
 			}
 		}
-		(self.navigationController as? CustomNavigationController)?.showLoginScreen()
+		(self.navigationController as? RootNavigationController)?.showLoginScreen()
 	}
 }

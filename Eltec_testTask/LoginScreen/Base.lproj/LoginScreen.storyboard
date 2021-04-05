@@ -23,7 +23,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-wl-rSc" userLabel="LoginTextField">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-wl-rSc" userLabel="LoginTextField">
                                 <rect key="frame" x="20" y="98" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -34,13 +34,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNZ-GI-4GH" userLabel="PasswordTextField">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QNZ-GI-4GH" userLabel="PasswordTextField">
                                 <rect key="frame" x="20" y="175" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="b2z-WS-fEe">
+                                <rect key="frame" x="197" y="249" width="20" height="20"/>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AW-YU-JhO">
-                                <rect key="frame" x="40" y="258" width="334" height="30"/>
+                                <rect key="frame" x="40" y="309" width="334" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Login"/>
@@ -57,6 +61,9 @@
                             <constraint firstItem="fQI-Mv-EY9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="2Ss-mk-HL0"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="leading" secondItem="C5h-wl-rSc" secondAttribute="leading" id="5Lp-78-1uJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7AW-YU-JhO" secondAttribute="trailing" constant="40" id="An3-Io-Kxf"/>
+                            <constraint firstItem="7AW-YU-JhO" firstAttribute="top" secondItem="b2z-WS-fEe" secondAttribute="bottom" constant="40" id="Lfd-Sb-Xni"/>
+                            <constraint firstItem="b2z-WS-fEe" firstAttribute="top" secondItem="QNZ-GI-4GH" secondAttribute="bottom" constant="40" id="LvQ-u4-EAw"/>
+                            <constraint firstItem="b2z-WS-fEe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="M5o-sV-DWW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wu0-RG-axd" secondAttribute="trailing" constant="320" id="PN0-sH-Ubu"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="trailing" secondItem="C5h-wl-rSc" secondAttribute="trailing" id="TVI-2L-fJf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fQI-Mv-EY9" secondAttribute="trailing" constant="20" id="YWC-vR-zQg"/>
@@ -66,11 +73,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C5h-wl-rSc" secondAttribute="trailing" constant="20" id="gHm-03-Udg"/>
                             <constraint firstItem="wu0-RG-axd" firstAttribute="top" secondItem="C5h-wl-rSc" secondAttribute="bottom" constant="14" id="gJv-ln-si2"/>
                             <constraint firstItem="wu0-RG-axd" firstAttribute="leading" secondItem="fQI-Mv-EY9" secondAttribute="leading" id="kDh-rK-UnE"/>
-                            <constraint firstItem="7AW-YU-JhO" firstAttribute="top" secondItem="QNZ-GI-4GH" secondAttribute="bottom" constant="49" id="mm0-tA-U5d"/>
                             <constraint firstItem="QNZ-GI-4GH" firstAttribute="leading" secondItem="wu0-RG-axd" secondAttribute="trailing" constant="-74" id="qgT-ge-TI4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="b2z-WS-fEe" id="Ovo-n8-snB"/>
                         <outlet property="passwordTextField" destination="QNZ-GI-4GH" id="gtL-3J-fMV"/>
                         <outlet property="usernameTextField" destination="C5h-wl-rSc" id="NiQ-MY-RwE"/>
                     </connections>

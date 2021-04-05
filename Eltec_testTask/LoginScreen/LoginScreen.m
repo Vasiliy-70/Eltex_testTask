@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.activityIndicator.hidden = true;
 }
 
 - (IBAction)LoginButtonPressed {
@@ -41,18 +42,21 @@
 			[self showAlert:error.localizedDescription];
 		}
 		
-		[(CustomNavigationController *) self.navigationController showUserInfoScreenWithUserAccount:_usernameTextField.text];
+		[(RootNavigationController *) self.navigationController showUserInfoScreenWithUserAccount:_usernameTextField.text];
 	}
 }
 
 -(void)autorization {
+	self.activityIndicator.hidden = false;
 	QueryService *queryService = [[QueryService alloc] init];
 	[queryService autorizationWithUrl:_url login:_usernameTextField.text password:_passwordTextField.text];
 }
 
 -(void)showAlert:(NSString *)message {
 	UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:message preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertController* defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+	UIAlertController* defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler: ^(UIAlertAction * _Nonnull action) {
+		self.activityIndicator.hidden = true;
+	}];
 	[alert addAction:defaultAction];
 	[self presentViewController:alert animated:YES completion:nil];
 }

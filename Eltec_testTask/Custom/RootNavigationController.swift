@@ -1,5 +1,5 @@
 //
-//  CustomNavigationController.swift
+//  RootNavigationController.swift
 //  Eltec_testTask
 //
 //  Created by Боровик Василий on 04.04.2021.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol ICustomNavigationController: class {
+protocol IRootNavigationController: class {
 	func showLoginScreen()
 	func showUserInfoScreen(userAccount: String)
 }
 
-final class CustomNavigationController: UINavigationController {
+final class RootNavigationController: UINavigationController {
 	private let queryService = QueryService()
 	private let urlAutorization = "http://smart.eltex-co.ru:8271/api/v1/oauth/token"
 	private let urlGetInfo = "http://smart.eltex-co.ru:8271/api/v1/user"
@@ -22,10 +22,10 @@ final class CustomNavigationController: UINavigationController {
     }
 }
 
-// MARK: ICustomNavigationController
+// MARK: IRootNavigationController
 
-@objc extension CustomNavigationController: ICustomNavigationController {
-	@objc func showLoginScreen() {
+extension RootNavigationController: IRootNavigationController {
+	func showLoginScreen() {
 		let loginScreen = LoginScreen.storyboardInstance(urlAutorization)
 		self.setViewControllers([loginScreen], animated: true)
 	}
@@ -35,6 +35,4 @@ final class CustomNavigationController: UINavigationController {
 			self.setViewControllers([userInfoScreen], animated: true)
 		}
 	}
-	
-	
 }

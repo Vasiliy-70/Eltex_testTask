@@ -14,7 +14,6 @@ protocol IQueryService: class {
 }
 
 final class QueryService: IQueryService {
-
 	private let defaultSession = URLSession(configuration: .default)
 	private var dataTask: URLSessionDataTask?
 	private var errorMessage = ""
