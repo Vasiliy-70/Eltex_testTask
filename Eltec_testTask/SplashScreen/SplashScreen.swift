@@ -23,7 +23,6 @@ final class SplashScreen: UIViewController {
 		self.checkSession()
 	}
 	
-//	Проверка, есть ли сохранённая пользовательская сессия
 	private func checkSession() {
 		if let userAccount = UserDefaults.standard.object(forKey: userDefaultsKey) as? String {
 			let userInfo = Locksmith.loadDataForUserAccount(userAccount: userAccount)

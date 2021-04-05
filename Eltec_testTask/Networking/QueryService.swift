@@ -39,8 +39,6 @@ final class QueryService: IQueryService {
 				self?.errorMessage = "Ошибка обновления данных: \(error.localizedDescription)\n"
 			} else if let data = data,
 					  let response = response as? HTTPURLResponse {
-				print(token)
-				print(response.statusCode)
 				if response.statusCode == 200 {
 					self?.responseData = data
 				} else {

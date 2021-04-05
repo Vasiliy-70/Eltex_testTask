@@ -142,8 +142,8 @@
             filePath = "Eltec_testTask/Networking/QueryService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "autorization(url:login:password:completion:)"
             landmarkType = "7">
          </BreakpointContent>
