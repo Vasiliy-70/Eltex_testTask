@@ -10,16 +10,23 @@ import Foundation
 @objc(QueryService) public class QueryServiceObjCWrapper: NSObject {
 	private let queryService = QueryService()
 	
-	@objc public func autorization(url: String, login: String, password: String) {
-		let response = AutorizationResponseClass.shared()
-		if let url = URL(string: url) {
-			self.queryService.autorization(url: url, login: login, password: password) { data, error in
-				response.error = error
-				if (error == "") {
-					response.error = Parsers().JSONParse(data: data, to: &response.data)
-				}
-			}
+	@objc public func autorization(url: String, login: String, password: String, completion: @escaping (AutorizationResponseClass) -> Void) {
+		
+		guard let url = URL(string: url) else {
+			assertionFailure("URL isn't correct")
+			return
 		}
+		let response = AutorizationResponseClass()
+		
+		self.queryService.autorization(url: url, login: login, password: password, completion: {
+			data, error in
+			response.error = error
+			if (error == "") {
+				response.error = Parsers().JSONParse(data: data, to: &response.data)
+			}
+			
+			completion(response)
+		})
 	}
 }
 

@@ -9,6 +9,7 @@
 #import <Eltec_testTask-Swift.h>
 
 @implementation LoginScreen
+QueryService *queryService;
 
 + (LoginScreen *)storyboardInstance:(NSString *)url {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass(self) bundle:nil];
@@ -19,37 +20,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	queryService = [[QueryService alloc] init];
 	self.activityIndicator.hidden = true;
 }
 
 - (IBAction)LoginButtonPressed {
-	NSString* error = @"";
-	NSString* token = @"";
 	if (![_usernameTextField.text  isEqual: @""] && ![_passwordTextField.text  isEqual: @""]) {
 		[self autorization];
-		error = [AutorizationResponseClass shared].getError;
-		token = [AutorizationResponseClass shared].getAccessToken;
-	} else error = @"Не все поля заполнены";
-	
-	if (![error isEqual: @""] || token.length == 0) {
-		[self showAlert:error];
-	} else {
-		NSError *error = nil;
-		LocksmithObjCWrapper* keyChain  = [[LocksmithObjCWrapper alloc] init];
-		[keyChain saveDatawithkey:_usernameTextField.text value:token forUserAccount:_usernameTextField.text error:&error];
-		
-		if (error != nil) {
-			[self showAlert:error.localizedDescription];
-		}
-		
-		[(RootNavigationController *) self.navigationController showUserInfoScreenWithUserAccount:_usernameTextField.text];
-	}
+	} else [self showAlert: @"Не все поля заполнены"];
 }
 
 -(void)autorization {
 	self.activityIndicator.hidden = false;
-	QueryService *queryService = [[QueryService alloc] init];
-	[queryService autorizationWithUrl:_url login:_usernameTextField.text password:_passwordTextField.text];
+	
+	__weak LoginScreen *weakSelf = self;
+	[queryService autorizationWithUrl:_url login: _usernameTextField.text password:_passwordTextField.text completion:^(AutorizationResponseClass * _Nonnull response) {
+		
+		NSString* error = response.getError;
+		NSString* token = response.getAccessToken;
+
+		if (![error isEqual: @""] || token.length == 0) {
+			[weakSelf showAlert:error];
+		} else {
+			NSError *error = nil;
+			
+			LocksmithObjCWrapper* keyChain  = [[LocksmithObjCWrapper alloc] init];
+			[keyChain saveDatawithkey:weakSelf.usernameTextField.text value:token forUserAccount:weakSelf.usernameTextField.text error:&error];
+
+			if (error != nil) {
+				[weakSelf showAlert:error.localizedDescription];
+			}
+
+			[(RootNavigationController *) weakSelf.navigationController showUserInfoScreenWithUserAccount:weakSelf.usernameTextField.text];
+		}
+	}];
 }
 
 -(void)showAlert:(NSString *)message {

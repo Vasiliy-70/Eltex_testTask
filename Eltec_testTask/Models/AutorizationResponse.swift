@@ -16,23 +16,10 @@ struct AutorizationResponse: Codable {
 }
 
 @objc public class AutorizationResponseClass: NSObject {
-	private override init() {
-		if self.data == nil {
-			self.data = AutorizationResponse()
-		}
-	}
-	private static var uniqueInstance: AutorizationResponseClass?
 	
 	var data: AutorizationResponse?
 	var error = ""
-	
-	@objc static func shared() -> AutorizationResponseClass {
-		if self.uniqueInstance == nil {
-			self.uniqueInstance = AutorizationResponseClass()
-		}
-		return uniqueInstance!
-	}
-	
+
 	@objc func getError() -> String { return self.error}
 	@objc func getAccessToken() -> String? { return self.data?.access_token}
 }

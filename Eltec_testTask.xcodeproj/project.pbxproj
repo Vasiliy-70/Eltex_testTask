@@ -14,7 +14,6 @@
 		474C1FCE261A269000A11AA3 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474C1FCD261A269000A11AA3 /* UserInfoModel.swift */; };
 		475B69C7260EEC7600F94208 /* LoginScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 475B69C6260EEC7600F94208 /* LoginScreen.m */; };
 		477C4DBB2619F32A007015F6 /* Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477C4DBA2619F32A007015F6 /* Parsers.swift */; };
-		477C4DC02619FF3B007015F6 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477C4DBF2619FF3B007015F6 /* URLSessionExtension.swift */; };
 		47834954261849BF006F2FCB /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47834953261849BF006F2FCB /* SplashScreen.storyboard */; };
 		4783495726184A33006F2FCB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783495626184A33006F2FCB /* SplashScreen.swift */; };
 		478583202618825D000464F4 /* UserInfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4785831F2618825D000464F4 /* UserInfoScreen.storyboard */; };
@@ -36,7 +35,6 @@
 		475B69C5260EEC7600F94208 /* LoginScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginScreen.h; sourceTree = "<group>"; };
 		475B69C6260EEC7600F94208 /* LoginScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginScreen.m; sourceTree = "<group>"; };
 		477C4DBA2619F32A007015F6 /* Parsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsers.swift; sourceTree = "<group>"; };
-		477C4DBF2619FF3B007015F6 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		47834953261849BF006F2FCB /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		4783495626184A33006F2FCB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		4783496026185185006F2FCB /* Eltect_testTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eltect_testTask-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				473ADDCF2619919A0086231D /* RootNavigationController.swift */,
-				477C4DBF2619FF3B007015F6 /* URLSessionExtension.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -306,7 +303,6 @@
 				474C1FCE261A269000A11AA3 /* UserInfoModel.swift in Sources */,
 				473ADDD02619919A0086231D /* RootNavigationController.swift in Sources */,
 				471D53A02619DF9100D18DEC /* AutorizationResponse.swift in Sources */,
-				477C4DC02619FF3B007015F6 /* URLSessionExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

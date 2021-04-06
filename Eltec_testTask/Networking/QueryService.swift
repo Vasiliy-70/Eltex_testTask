@@ -45,7 +45,7 @@ final class QueryService: IQueryService {
 					self?.errorMessage = "Ошибка обновления данных.Код:  \(response.statusCode)"
 				}
 			}
-			
+
 			DispatchQueue.main.async {
 				completion(self?.responseData ?? Data(), self?.errorMessage ?? "")
 			}
@@ -53,7 +53,7 @@ final class QueryService: IQueryService {
 		self.dataTask?.resume()
 	}
 	
-	func autorization(url: URL, login: String, password: String, completion: @escaping (Data, String) -> Void) {
+	func autorization(url: URL, login: String, password: String, completion: @escaping QueryResult) {
 		self.dataTask?.cancel()
 
 		var authorizationHeader = ""
@@ -68,19 +68,29 @@ final class QueryService: IQueryService {
 		request.setValue("Basic " + authorizationHeader, forHTTPHeaderField: "Authorization")
 		request.httpBody = httpBody
 		
-		let response = defaultSession.synchronousDataTask(with: request)
-		
-		if let error = response.2 {
-			self.errorMessage = "Ошибка при попытке авторизации: \(error.localizedDescription)\n"
-		} else if let data = response.0,
-				  let response = response.1 as? HTTPURLResponse {
-			if response.statusCode == 200 {
-				self.responseData = data
-			} else {
-				self.errorMessage = "Ошибка при попытке авторизации. Код: \(response.statusCode)"
+		self.dataTask = defaultSession.dataTask(with: request) { [weak self] data, response, error in
+			defer {
+				self?.dataTask = nil
+			}
+			
+			self?.responseData = Data()
+			self?.errorMessage = ""
+			
+			if let error = error {
+				self?.errorMessage = "Ошибка авторизации: \(error.localizedDescription)\n"
+			} else if let data = data,
+					  let response = response as? HTTPURLResponse {
+				if response.statusCode == 200 {
+					self?.responseData = data
+				} else {
+					self?.errorMessage = "Ошибка авторизации. Код:  \(response.statusCode)"
+				}
+			}
+
+			DispatchQueue.main.async {
+				completion(self?.responseData ?? Data(), self?.errorMessage ?? "")
 			}
 		}
-		
-		completion(self.responseData, self.errorMessage)
+		self.dataTask?.resume()
 	}
 }
